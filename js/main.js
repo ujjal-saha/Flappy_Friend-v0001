@@ -114,6 +114,25 @@
     }
   });
 
+  const starCount = document.querySelector("[data-github-stars]");
+  if (starCount) {
+    fetch("https://api.github.com/repos/ujjal-saha/Flappy_Friend-v0001", {
+      headers: { Accept: "application/vnd.github+json" },
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("GitHub star count unavailable");
+        return response.json();
+      })
+      .then((repository) => {
+        if (Number.isInteger(repository.stargazers_count)) {
+          starCount.textContent = new Intl.NumberFormat().format(repository.stargazers_count);
+        }
+      })
+      .catch(() => {
+        // Keep the built-in zero as a graceful offline fallback.
+      });
+  }
+
   const year = String(new Date().getFullYear());
   document.querySelectorAll("[data-current-year]").forEach((element) => {
     element.textContent = year;

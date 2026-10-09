@@ -12,10 +12,6 @@ A responsive, dark-mode portfolio and resource site for Roblox Luau scripts, Pyt
 - `js/main.js` — mobile navigation, copy-to-clipboard buttons, and footer year
 - `assets/` — reserved for your logo and images
 
-## Download bundle
-
-The complete static site is also packaged separately at [`downloads/the-joyboy-labs-site.zip`](downloads/the-joyboy-labs-site.zip).
-
 ## Run locally
 
 Open `index.html` in a browser, or serve the folder with any static file server. There is no build step, framework, backend, or database.
